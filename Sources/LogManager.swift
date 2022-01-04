@@ -36,20 +36,20 @@ public enum LogType {
 public final class LogManager {
     
     // MARK: - Instance
-    static let shared = LogManager()
+    public static let shared = LogManager()
     
     private init() { }
     
     // MARK: - Properties
-    var logLevel: LogLevel = .info
+    public var logLevel: LogLevel = .info
     
     // MARK: - Class methods
-    func logMessage(source: LogSource, message: String, type: LogType = .info) {
+    public func logMessage(source: LogSource, message: String, type: LogType = .info) {
         print("\n[DEVLOG][SERVICES] - ")
     }
     
     @available(macOS 10.15, *)
-    func logNetworkResponse(_ result: URLSession.DataTaskPublisher.Output) {
+    public func logNetworkResponse(_ result: URLSession.DataTaskPublisher.Output) {
         guard let httpResponse = result.response as? HTTPURLResponse else { return }
                 
         let messageURL  = "\n| URL:  - \(result.response.url?.absoluteString ?? "")"
