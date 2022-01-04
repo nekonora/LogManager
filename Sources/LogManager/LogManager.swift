@@ -48,6 +48,7 @@ public final class LogManager {
         print("\n[DEVLOG][SERVICES] - ")
     }
     
+    @available(macOS 10.15, *)
     func logNetworkResponse(_ result: URLSession.DataTaskPublisher.Output) {
         guard let httpResponse = result.response as? HTTPURLResponse else { return }
                 

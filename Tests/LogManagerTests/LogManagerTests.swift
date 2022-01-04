@@ -2,10 +2,16 @@ import XCTest
 @testable import LogManager
 
 final class LogManagerTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(LogManager().text, "Hello, World!")
+    
+    var logger: LogManager!
+    
+    override func setUp() {
+        super.setUp()
+        self.logger = LogManager.shared
+    }
+    
+    override func tearDown() {
+        self.logger = nil
+        super.tearDown()
     }
 }
