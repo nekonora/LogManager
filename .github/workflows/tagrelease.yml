@@ -1,0 +1,2 @@
+- name: GitHub Release from Tag
+  uses: eloquent/github-release-action@v1
