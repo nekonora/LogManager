@@ -49,6 +49,8 @@ public final class LogManager {
     }
     
     @available(macOS 10.15, *)
+    @available(macCatalyst 15.0, *)
+    @available(iOS 15.0, *)
     public func logNetworkResponse(_ result: URLSession.DataTaskPublisher.Output) {
         guard let httpResponse = result.response as? HTTPURLResponse else { return }
                 
